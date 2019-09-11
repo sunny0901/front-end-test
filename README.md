@@ -2,6 +2,7 @@
 
 Please contain all the code required for your solution within this project. Be sure to keep the backend and frontend code seperate and use the structure provided. Afterwards, send the completed code back to us to review. Feel free to put comments in the HTML or Javascript to explain your solutions.
 
+
 ## Instructions
 
 Your supervisor has instructed you to create the next Spotify. Your MVP requirements are only to create a browsable catalogue of available albums. The project is composed of two components:
@@ -23,14 +24,17 @@ Your supervisor has instructed you to create the next Spotify. Your MVP requirem
 * Implement custom JWT based authentication
 * Create an authenticated route that’s only accessible from a logged in user
 * Logged in users should be able to perform write actions with the Album Rest API
+    * UI should enable you create, update and delete
 
-**PLEASE DO NOT USE ANY THIRD PARTY LIBRARIES** in your frontend code.
+**PLEASE DO NOT USE ANY THIRD PARTY LIBRARIES IN YOUR FRONT END CODE** .
+
 
 ## Have Fun!
 
 One thing to keep in mind here is that these are fairly open-ended for a reason. We want to see your creativity and style, there is plenty of room for finesse, so please feel free to use it. Also these things shouldn't take you longer than 6 - 12 hours, so please don't feel like you need to spend too long on it!
 
 Have fun, show off, and please give us feedback so we can make this better!
+
 
 ## Getting Started
 
