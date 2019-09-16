@@ -2,7 +2,9 @@
 
 Contained within this repo is a series of problems, each problem is an HTML file that contains the explaination of the problem as well as a partial solution.
 
-Please complete the HTML/CSS/JavaScript code in the problem file in order to solve it and send the completed code back to us to review. Feel free to put comments in the HTML file to explain your solution. Also PLEASE DO NOT USE ANY THIRD PARTY LIBRARIES to complete these.
+Please complete the HTML/CSS/JavaScript code in the problem file in order to solve it and send the completed code back to us to review. Feel free to put comments in the HTML file to explain your solution.
+
+**PLEASE DO NOT USE ANY THIRD PARTY LIBRARIES IN YOUR FRONT END CODE.**
 
 
 ## Have Fun!
