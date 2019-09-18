@@ -1,31 +1,79 @@
 <!doctype html>
 <html>
+
 <head>
 	<title>Front End Coding Test</title>
 	<link type="text/css" rel="stylesheet" href="../css/style.css" />
 	<style type="text/css">
 		.picture {
 			background-color: #F9F9F9;
-			border: 1px solid #CCCCCC; padding: 3px;
+			border: 1px solid #CCCCCC;
+			padding: 3px;
 			text-align: center;
 			margin: 0 0 18px 0;
 			width: 647px;
 			color: #000;
 		}
-		
+
 		.picture img {
 			border: 1px solid #CCCCCC;
-			vertical-align:middle; margin-bottom: 3px;
+			vertical-align: middle;
+			margin-bottom: 3px;
+		}
+
+		/* Style the tabcontainer */
+		.tabcontainer {
+			border: 1px solid #ccc;
+		}
+
+		/* Style the tab */
+		.tab {
+			/* clear the side effect of float(tabbutton) */ 
+			overflow: hidden;
+			background-color: #f1f1f1;
+		}
+
+		/* Style the tab button */
+		.tabbutton {
+			cursor: pointer;
+			float: left;
+			background-color: inherit;
+			font-size: 17px;
+			border: none;
+			outline: none;
+			padding: 12px 20px;
+			transition: 0.3s;
+		}
+
+		/* Change the color of button when horver */
+		.tabbutton:hover {
+			background-color: #ddd;
+		}
+
+		/* Change the color of the button when active */
+		.active {
+			background-color: #ccc;
+		}
+
+		/* Style the tabcontent */
+		.tabcontent {
+			display: "none";
+			background-color: white;
+			border-top: 1px solid #ccc;
+			color: black;
+			padding: 2px 12px;
 		}
 	</style>
 </head>
-<body>	
+
+<body>
 	<div class="head"></div>
 	<div id="content">
 		<h1><span class="red">Tabbed</span> content</h1>
 
 		<p>
-			Using HTML, CSS, and JavaScript, create a functional tabbed content container in the div below.  Each tab should contain different content, and content should change when clicking on a different tab.
+			Using HTML, CSS, and JavaScript, create a functional tabbed content container in the div below. Each tab
+			should contain different content, and content should change when clicking on a different tab.
 		</p>
 
 		<div class="picture">
@@ -33,26 +81,63 @@
 			<p>Example of a tabbed content container.</p>
 		</div>
 
-		<hr/>
+		<hr />
 
-		<div id="container">
-			Turn this content into a tabbed container.
+		<div class="tabcontainer">
+			<div class="tab">
+				<button class="tabbutton" onclick="openContent(event, 'tab1')" id="default">Tab 1</button>
+				<button class="tabbutton" onclick="openContent(event, 'tab2')">Tab 2</button>
+				<button class="tabbutton" onclick="openContent(event, 'tab3')">Tab 3</button>
+			</div>
+			<div id="tab1" class="tabcontent">
+				<p>
+					Gingerbread muffin gummies gingerbread macaroon. Lollipop candy applicake toffee faworki. Bear claw
+					topping jelly toffee toffee powder tiramisu candy chupa chups. Chupa chups dragee icing applicake
+					chupa
+					chups dessert. Croissant jelly faworki marzipan tootsie roll marshmallow. Marshmallow toffee sweet
+					roll
+					fruitcake.
+				</p>
+			</div>
 
-			<h3>Tab 1</h3>
-			<p>
-				Gingerbread muffin gummies gingerbread macaroon. Lollipop candy applicake toffee faworki. Bear claw topping jelly toffee toffee powder tiramisu candy chupa chups. Chupa chups dragee icing applicake chupa chups dessert. Croissant jelly faworki marzipan tootsie roll marshmallow. Marshmallow toffee sweet roll fruitcake.
-			</p>
+			<div id="tab2" class="tabcontent">
+				<p>
+					Chocolate faworki croissant brownie halvah macaroon gummi bears wypas. Chupa chups icing gummies
+					pudding
+					dessert carrot cake. Cupcake jelly beans sweet roll icing ice cream apple pie tootsie roll gummi
+					bears
+					marzipan. Brownie gummies chupa chups pie. Cupcake jujubes topping.
+				</p>
+			</div>
 
-			<h3>Tab 2</h3>
-			<p>
-				Chocolate faworki croissant brownie halvah macaroon gummi bears wypas. Chupa chups icing gummies pudding dessert carrot cake. Cupcake jelly beans sweet roll icing ice cream apple pie tootsie roll gummi bears marzipan. Brownie gummies chupa chups pie. Cupcake jujubes topping. 
-			</p>
-
-			<h3>Tab 3</h3>
-			<p>
-				Cheesecake jelly beans ice cream lollipop sweet pastry. Chupa chups dessert cheesecake sesame snaps. Cookie ice cream candy canes pastry cake muffin. Icing chocolate sweet gummi bears powder oat cake oat cake lemon drops.
-			</p>
+			<div id="tab3" class="tabcontent">
+				<p>
+					Cheesecake jelly beans ice cream lollipop sweet pastry. Chupa chups dessert cheesecake sesame snaps.
+					Cookie
+					ice cream candy canes pastry cake muffin. Icing chocolate sweet gummi bears powder oat cake oat cake
+					lemon
+					drops.
+				</p>
+			</div>
 		</div>
 	</div>
+	<script>
+		function openContent(evt, tabName) {
+			let tabcontents = document.getElementsByClassName("tabcontent");
+			let tabbuttons = document.getElementsByClassName("tabbutton");
+			for (let tabcontent of tabcontents){
+				tabcontent.style.display = "none";
+			}
+			for (let tabbutton of tabbuttons) {
+				tabbutton.className = tabbutton.className.replace(" active", "");
+			}
+			document.getElementById(tabName).style.display = "block";
+			event.target.className += " active";
+		}
+
+		//Show the default tag
+		document.getElementById("default").click();
+	</script>
 </body>
+
 </html>
