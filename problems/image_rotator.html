@@ -1,10 +1,14 @@
 <!doctype html>
 <html>
+
 <head>
 	<title>Front End Coding Test</title>
 	<link type="text/css" rel="stylesheet" href="../css/style.css" />
 	<style type="text/css">
-	    .slides {display: "none"}
+		.slides {
+			display: "none"
+		}
+
 		/* Rotator container */
 		#rotator {
 			width: 450px;
@@ -15,7 +19,8 @@
 		}
 
 		/* Next and Previous buttons */
-		.prev, .next {
+		.prev,
+		.next {
 			cursor: pointer;
 			color: #CCC;
 			font-weight: bold;
@@ -29,16 +34,17 @@
 			border-radius: 0 3px 3px 0;
 			user-select: none;
 		}
- 
+
 		/* Position the next button to the right */
 		.next {
 			right: 0;
 			border-radius: 3px 0 0 3px;
 		}
- 
-		/* On horver, add a background color */
-		.prev:hover, .next:hover {
-			background-color: rgba(0,0,0,0.5)
+
+		/* On horver, add a background color to prev and next buttton */
+		.prev:hover,
+		.next:hover {
+			background-color: rgba(0, 0, 0, 0.5)
 		}
 
 		/* Captain */
@@ -47,7 +53,7 @@
 			display: block;
 			position: absolute;
 			bottom: 0;
-			background: rgba(0,0,0,0.5);
+			background: rgba(0, 0, 0, 0.5);
 			width: 100%;
 			max-width: none;
 			z-index: 2;
@@ -70,7 +76,9 @@
 			transition: background-color 0.6s ease;
 		}
 
-		.active, .dot:hover {
+		/* Change the color of dot when hover or active */
+		.active,
+		.dot:hover {
 			background-color: #717171;
 		}
 
@@ -83,117 +91,137 @@
 		}
 
 		@-webkit-keyframes fade {
-			from {opacity: .4} 
-			to {opacity: 1}
+			from {
+				opacity: .4
+			}
+
+			to {
+				opacity: 1
+			}
 		}
 
 		@keyframes fade {
-			from {opacity: .4} 
-			to {opacity: 1}
+			from {
+				opacity: .4
+			}
+
+			to {
+				opacity: 1
+			}
 		}
 	</style>
 </head>
+
 <body>
-<div class="head"></div>
+	<div class="head"></div>
 
-<div id="content">
-	<h1><span class="red">Image</span> Rotator</h1>
+	<div id="content">
+		<h1><span class="red">Image</span> Rotator</h1>
 
-	<p>
-		Using the below images, make a rotator in the box below that shows only one of the vehicle positions every 3 seconds.  The rotator should also display the correct image title with each image change.
-	</p>
-	<p>
-		It would be really awesome if the slides animated between one another!
-	</p>
+		<p>
+			Using the below images, make a rotator in the box below that shows only one of the vehicle positions every 3
+			seconds. The rotator should also display the correct image title with each image change.
+		</p>
+		<p>
+			It would be really awesome if the slides animated between one another!
+		</p>
 
-	<hr />
+		<hr />
 
-	<h4>3/4 Front View</h4>
-	<img src="../img/3:4_front_view.jpg" /><br/>
+		<h4>3/4 Front View</h4>
+		<img src="../img/3:4_front_view.jpg" /><br />
 
-	<h4>3/4 Rear View</h4>
-	<img src="../img/3:4_rear_view.jpg" /><br/>
+		<h4>3/4 Rear View</h4>
+		<img src="../img/3:4_rear_view.jpg" /><br />
 
-	<h4>3/4 Rear View Open</h4>
-	<img src="../img/3:4_rear_view_open.jpg" /><br/>
+		<h4>3/4 Rear View Open</h4>
+		<img src="../img/3:4_rear_view_open.jpg" /><br />
 
-	<h4>Front View</h4>
-	<img src="../img/front_view.jpg" /><br/>
+		<h4>Front View</h4>
+		<img src="../img/front_view.jpg" /><br />
 
-	<hr/>
+		<hr />
 
-	<div id="rotator">
+		<div id="rotator">
 
-	<div class="slides fade">
-		<img src="../img/3:4_front_view.jpg" style="width:100%"/>
-		<div class="nametext"><h4>3/4 Front View</h4></div>
+			<div class="slides fade">
+				<img src="../img/3:4_front_view.jpg" style="width:100%" />
+				<div class="nametext">
+					<h4>3/4 Front View</h4>
+				</div>
+			</div>
+
+			<div class="slides fade">
+				<img src="../img/3:4_rear_view.jpg" style="width:100%" />
+				<div class="nametext">
+					<h4>3/4 Rear View</h4>
+				</div>
+			</div>
+
+			<div class="slides fade">
+				<img src="../img/3:4_rear_view_open.jpg" style="width:100%" />
+				<div class="nametext">
+					<h4>3/4 Rear View Open</h4>
+				</div>
+			</div>
+
+			<div class="slides fade">
+				<img src="../img/front_view.jpg" style="width:100%" />
+				<div class="nametext">
+					<h4>Front View</h4>
+				</div>
+			</div>
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+			<div style="text-align:center">
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
+				<span class="dot" onclick="currentSlide(4)"></span>
+			</div>
+		</div>
+
 	</div>
 
-	<div class="slides fade">
-		<img src="../img/3:4_rear_view.jpg" style="width:100%"/>
-		<div class="nametext"><h4>3/4 Rear View</h4></div>
-	</div>
+	<script>
+		var slideIndex = 0;
+		var timer;
+		showSlides();
 
-	<div class="slides fade">
-		<img src="../img/3:4_rear_view_open.jpg" style="width:100%"/>
-		<div class="nametext"><h4>3/4 Rear View Open</h4></div>
-	</div>
+		function plusSlides(n) {
+			showSlides(n);
+		}
 
-	<div class="slides fade">
-		<img src="../img/front_view.jpg" style="width:100%"/>
-		<div class="nametext"><h4>Front View</h4></div>
-	</div>
+		function currentSlide(n) {
+			showSlides(n - slideIndex);
+		}
 
-	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-	<div style="text-align:center">
-		<span class="dot" onclick="currentSlide(1)"></span>
-		<span class="dot" onclick="currentSlide(2)"></span>
-		<span class="dot" onclick="currentSlide(3)"></span>
-		<span class="dot" onclick="currentSlide(4)"></span>
-	</div>
-	</div>
-
-</div>
-
-<script>
-var slideIndex = 0;
-var timer;
-showSlides();
-
-function plusSlides(n) {
-	showSlides(n);
-}
-
-function currentSlide(n) {
-	showSlides(n-slideIndex);
-}
-
-function showSlides(n=0) {
-	let i;
-	let slides = document.getElementsByClassName("slides");
-	let dots = document.getElementsByClassName("dot");
-	clearTimeout(timer);
-	for (let slide of slides) {
-		slide.style.display = "none";
-	}
-	for (let dot of dots) {
-		dot.className = dot.className.replace(" active", "")
-	}
-	if (n==0){
-		slideIndex++;	
-	}
-	else{
-		slideIndex += n;
-	}
-	if (slideIndex > slides.length) slideIndex = 1;
-	if (slideIndex==0) slideIndex=slides.length;
-	slides[slideIndex-1].style.display = "block";
-	dots[slideIndex-1].className += " active";
-	timer = setTimeout("showSlides(0)", 3000);
-}
-</script>
+		function showSlides(n = 0) {
+			let slides = document.getElementsByClassName("slides");
+			let dots = document.getElementsByClassName("dot");
+			clearTimeout(timer);
+			for (let slide of slides) {
+				slide.style.display = "none";
+			}
+			for (let dot of dots) {
+				dot.className = dot.className.replace(" active", "")
+			}
+			if (n == 0) {
+				slideIndex++;
+			}
+			else {
+				slideIndex += n;
+			}
+			if (slideIndex > slides.length) slideIndex = 1;
+			if (slideIndex == 0) slideIndex = slides.length;
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+			timer = setTimeout("showSlides(0)", 3000);
+		}
+	</script>
 
 </body>
+
 </html>
