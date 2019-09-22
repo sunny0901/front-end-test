@@ -1,3 +1,6 @@
+@import "image_rotator.css";
+@import "tabbed_content.css";
+
 body {
     background: white;
 	margin: 0;

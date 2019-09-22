@@ -1,6 +1,7 @@
 let fulltext = getText();
+//replace useless blank space
 fulltext = fulltext.replace(/\s+/g, ' ');
-getText();
+
 function getText() {
     let fulltext = "";
     let searchtext = document.getElementById("search_text");
@@ -18,17 +19,6 @@ function getText() {
 }
 
 function search(id) {
-    // delete the highlight of previous searching
-    let searchspan = document.getElementsByTagName("p");
-    for (let i = 0; i < searchspan.length; i++) {
-        let spantext = searchspan[i].innerHTML;
-        if (searchspan[i].className == "keyword-match"){
-            console.log(searchspan[i].innerHTML)
-            searchspan[i].innerHTML = spantext.replace(new RegExp("<[^>]+>", "g"), '');
-            console.log(searchspan[i].innerHTML)
-        }
-    }
-
     //handle searching
     let keyword = document.getElementById(id).value;
     if (keyword == "") {
@@ -56,32 +46,12 @@ function search(id) {
     }
 }
 
-function hightlightKeyword(input, keyword) {
-    let store = {
-        length: 0
-    };
-
-    try {
-        return input
-            .replace(/^\s+/, ' ') // replace additional blank space
-
-            // replace html tag, and use placeholder for reverting later
-            .replace(/(<\w+[^>]*?>)|(<\/\w+[^>]*?>)/g, function (match) {
-                var key = '\t' + store.length++; // use placeholder \t
-
-                store[key] = match;
-                return key;
-            })
-
-            // highlight keyword 
-            // $1 means match the first reg expression represented by ()
-            .replace(new RegExp('(' + keyword + ')', 'g'), '<span class="keyword-match">' + '$1' + '</span>')
-
-            // return to html tag
-            .replace(/\t\d+/g, function (match) {
-                return store[match] || '';
-            });
-    } catch (e) {
-        return input;
+// press 'enter' key to realize Search
+function enterPress(e) { // pass in event
+    e = e || window.event;
+    if (e.keyCode == 13) {
+        // prevent automatic update of the page
+        event.returnValue = false;
+        document.getElementById("search_button").click();
     }
 }

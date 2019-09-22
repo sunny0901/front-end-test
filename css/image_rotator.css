@@ -1,0 +1,104 @@
+.slides {
+    display: "none"
+}
+
+/* Rotator container */
+#rotator {
+    width: 450px;
+    height: 300px;
+    border: 1px solid black;
+    background: #aaa;
+    position: relative;
+}
+
+/* Next and Previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    color: #CCC;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the next button to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On horver, add a background color to prev and next buttton */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+/* Captain */
+.nametext {
+    color: #CCC;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: none;
+    z-index: 2;
+    text-align: center;
+}
+
+h4 {
+    margin: 5px 5px;
+}
+
+/* Dot */
+.dot {
+    cursor: pointer;
+    height: 12.5px;
+    width: 12.5px;
+    margin: 5px 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Change the color of dot when hover or active */
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 3s;
+    animation-name: fade;
+    animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
