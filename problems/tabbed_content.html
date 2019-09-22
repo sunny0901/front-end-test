@@ -61,23 +61,7 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		function openContent(evt, tabName) {
-			let tabcontents = document.getElementsByClassName("tabcontent");
-			let tabbuttons = document.getElementsByClassName("tabbutton");
-			for (let tabcontent of tabcontents){
-				tabcontent.style.display = "none";
-			}
-			for (let tabbutton of tabbuttons) {
-				tabbutton.className = tabbutton.className.replace(" active", "");
-			}
-			document.getElementById(tabName).style.display = "block";
-			event.target.className += " active";
-		}
-
-		//Show the default tag
-		document.getElementById("default").click();
-	</script>
+	<script type="text/javascript" src="../js/tabbed-content.js"></script>
 </body>
 
 </html>

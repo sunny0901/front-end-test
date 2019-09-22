@@ -79,42 +79,7 @@
 
 	</div>
 
-	<script>
-		var slideIndex = 0;
-		var timer;
-		showSlides();
-
-		function plusSlides(n) {
-			showSlides(n);
-		}
-
-		function currentSlide(n) {
-			showSlides(n - slideIndex);
-		}
-
-		function showSlides(n = 0) {
-			let slides = document.getElementsByClassName("slides");
-			let dots = document.getElementsByClassName("dot");
-			clearTimeout(timer);
-			for (let slide of slides) {
-				slide.style.display = "none";
-			}
-			for (let dot of dots) {
-				dot.className = dot.className.replace(" active", "")
-			}
-			if (n == 0) {
-				slideIndex++;
-			}
-			else {
-				slideIndex += n;
-			}
-			if (slideIndex > slides.length) slideIndex = 1;
-			if (slideIndex == 0) slideIndex = slides.length;
-			slides[slideIndex - 1].style.display = "block";
-			dots[slideIndex - 1].className += " active";
-			timer = setTimeout("showSlides(0)", 3000);
-		}
-	</script>
+	<script type="text/javascript" src="../js/image_rotator.js"></script>
 
 </body>
 
