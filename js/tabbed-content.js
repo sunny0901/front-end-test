@@ -7,12 +7,12 @@ function openContent(evt, tabName) {
         tabcontent.style.display = "none";
     }
     for (let tabbutton of tabbuttons) {
-        tabbutton.className = tabbutton.className.replace(" active", "");
+        tabbutton.className = tabbutton.className.replace(" buttonactive", "");
     }
 
     // show the tab
     document.getElementById(tabName).style.display = "block";
-    event.target.className += " active";
+    event.target.className += " buttonactive";
 }
 
 //Show the default tag

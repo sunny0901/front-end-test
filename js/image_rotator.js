@@ -28,7 +28,7 @@ function showSlides(moveIndex = 0) {
     }
     // reset all dots to be unactive
     for (let dot of dots) {
-        dot.className = dot.className.replace(" active", "")
+        dot.className = dot.className.replace(" dotactive", "")
     }
 
     // automatic slide
@@ -46,7 +46,7 @@ function showSlides(moveIndex = 0) {
 
     // show the slide and corresponding dot
     slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+    dots[slideIndex - 1].className += " dotactive";
 
     // set timer
     timer = setTimeout("showSlides(0)", 3000);

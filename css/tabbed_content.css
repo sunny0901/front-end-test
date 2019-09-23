@@ -28,7 +28,7 @@
 }
 
 /* Change the color of the button when active */
-.active {
+.buttonactive {
     background-color: #ccc;
 }
 
